@@ -12,6 +12,8 @@
 - feat: block resource cap removed from the pending tick
 - fix: replace class hash issue resolved + gas fees issue resolved
 - fix: trim hash of eth state was failing with 0x0
+- refactor(gateway): remove query-only support from user transactions
+- fix(gateway): serialize tip as hex in UserTransaction
 - fix: devnet accounts getting deployed in sequencer mode
 - fix(rpc): fix BroadcastedDeclareTxn V3 in starknet-types-rpc
 - fix: oracle need condition
