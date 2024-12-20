@@ -60,7 +60,7 @@ starknet-e2e-test/contracts/build
 # rpc output
 output*
 
-tmp/
+tmp*
 
 *.info
 *.profraw
