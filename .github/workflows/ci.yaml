@@ -10,5 +10,14 @@ jobs:
     name: Test Runner Functionality
     runs-on: arc-runner-set
     steps:
-    - name: Print Debug Info
-      run: echo "Runner is working!"
+    - name: Set up Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        profile: minimal
+        toolchain: stable
+
+    - name: Install rustfmt
+      run: rustup component add rustfmt
+
+    - name: Run cargo fmt --check
+      run: cargo fmt --check
