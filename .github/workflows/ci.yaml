@@ -1,31 +1,14 @@
-name: openrpc-testgenv4
+name: Test Runner
 
 on:
   push:
     branches:
-      - 'piotr-stec/**'    
-
-env:
-  CARGO_TERM_COLOR: always
-  RUST_VERSION: 1.80.0
+      - 'piotr-stec/**'
 
 jobs:
-  rustfmt:
-    name: Check Rust Code Format
+  test:
+    name: Test Runner Functionality
     runs-on: arc-runner-set
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Set up Rust
-      uses: actions-rs/toolchain@v1
-      with:
-        profile: minimal
-        toolchain: stable
-
-    - name: Install rustfmt
-      run: rustup component add rustfmt
-
-    - name: Run cargo fmt --check
-      run: cargo fmt --check
+    - name: Print Debug Info
+      run: echo "Runner is working!"
