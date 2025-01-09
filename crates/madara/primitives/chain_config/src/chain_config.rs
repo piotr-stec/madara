@@ -209,7 +209,7 @@ impl ChainConfig {
             eth_gps_statement_verifier: eth_gps_statement_verifier::MAINNET.parse().expect("parsing a constant"),
 
             latest_protocol_version: StarknetVersion::V0_13_2,
-            block_time: Duration::from_secs(30),
+            block_time: Duration::from_secs(5),
             pending_block_update_time: Duration::from_secs(2),
 
             execution_batch_size: 16,
