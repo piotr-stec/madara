@@ -77,10 +77,13 @@ jobs:
 
       - run: chmod +x /tmp/bins/madara
 
-      - name: Start madara node
+      - name: Start madara sequencer
         run: |
-          /tmp/bins/madara --name madara --base-path ../madara_db --rpc-port 9944 --rpc-cors "*" --rpc-external --devnet --preset devnet --gas-price 0 --blob-gas-price 0 --strk-gas-price 0 --strk-blob-gas-price 0 --no-l1-sync &
+          /tmp/bins/madara --name Madara --sequencer --preset sepolia --base-path ../madara_db_sequencer --no-l1-sync --gateway --feeder-gateway-enable --gateway-enable --strk-gas-price 0 --strk-blob-gas-price 0 --rpc-port 9945  
 
+      - name: Start madara full node
+        run: |
+          /tmp/bins/madara --full --name Madara --chain-config-path configs/presets/sepolia.yaml --base-path ../madara_db_full_node --no-l1-sync --strk-gas-price 0 --strk-blob-gas-price 0 --rpc-port 9944
 
       - name: Checkout madara-runner repository
         uses: actions/checkout@v3
