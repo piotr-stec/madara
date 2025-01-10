@@ -59,7 +59,7 @@ jobs:
 
       - name: Start madara node
         run: |
-          ./tmp/bins/madara --name madara --base-path ../madara_db --rpc-port 9944 --rpc-cors "*" --rpc-external --devnet --preset devnet --gas-price 0 --blob-gas-price 0 --strk-gas-price 0 --strk-blob-gas-price 0 --no-l1-sync &
+          /tmp/bins/madara --name madara --base-path ../madara_db --rpc-port 9944 --rpc-cors "*" --rpc-external --devnet --preset devnet --gas-price 0 --blob-gas-price 0 --strk-gas-price 0 --strk-blob-gas-price 0 --no-l1-sync &
 
 
       - name: Checkout madara-runner repository
@@ -80,7 +80,7 @@ jobs:
 
       - name: Run OpenRPC Suite
         run: |
-          URLS="http://127.0.0.1":9944"
+          URLS="http://127.0.0.1:9944"
           target/release/openrpc-testgen-runner \
           --urls "${URLS}" \
           --paymaster-account-address "${PAYMASTER_ACCOUNT_ADDRESS}" \
