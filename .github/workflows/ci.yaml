@@ -22,7 +22,7 @@ jobs:
       - name: Setup build deps
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget clang llvm libudev-dev protobuf-compiler libssl-dev pkg-config
+          sudo apt-get install -y wget clang llvm libudev-dev protobuf-compiler libssl-dev pkg-config git
       - uses: rui314/setup-mold@v1
       - name: Build Madara binary
         run: |
@@ -69,6 +69,10 @@ jobs:
         with:
           repository: neotheprogramist/starknet-rpc-tests
           path: madara-runner
+
+      - name: Check Cargo
+        run: |
+          cargo --version
 
       - name: Scarb build
         run: |
